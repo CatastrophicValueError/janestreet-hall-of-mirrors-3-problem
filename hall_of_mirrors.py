@@ -50,10 +50,6 @@ x_node_map = [[(2*BLOCK_SIZE + BLOCK_SIZE*i, 5*BLOCK_SIZE/2 + BLOCK_SIZE*j) for 
 y_node_map = [[(5*BLOCK_SIZE/2 + BLOCK_SIZE*i, 2*BLOCK_SIZE + BLOCK_SIZE*j) for i in range(10)] for j in range(11)]
 
 
-
-
-
-
 class GridGUI:
 
     def __init__(self, master):
@@ -390,7 +386,7 @@ def on_click(event):
                 mirror_index[i][j] = "  "
                 my_gui.reconfigure_lasers()
 
-# key bindings
+# Key bindings
 my_gui.canvas.bind("<Button-1>",on_click)
 root.bind("<c>", lambda event : my_gui.clear_screen())
 
