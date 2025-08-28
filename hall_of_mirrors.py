@@ -31,11 +31,11 @@ def initialise_mirror_index():
     return [['  ' for _ in range(12)] for _ in range(12)]
 
 def initialise_number_dict():
-    top_num_dict = dict(zip([(0,j) for j in range(1,11)],[None for _ in range(10)]))
-    left_num_dict = dict(zip([(i,0) for i in range(1,11)],[None for _ in range(10)]))
-    right_num_dict = dict(zip([(i,11) for i in range(1,11)],[None for _ in range(10)]))
-    bottom_num_dict = dict(zip([(11,j) for j in range(1,11)],[None for _ in range(10)]))
-    return top_num_dict | left_num_dict | right_num_dict | bottom_num_dict
+    number_positions = [(0,j) for j in range(1,11)] + 
+                   [(i,0) for i in range(1,11)] +
+                   [(i,11) for i in range(1,11)] +
+                   [(11,j) for j in range(1,11)]
+    return {pos: None for pos in number_positions}
 
 def initialise_laser_dict():
     dot_indexes = [(i,j) for i in range(12) for j in range(12) if ((i in [0,11]) != (j in [0,11]))]
